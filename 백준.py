@@ -226,14 +226,26 @@
 #     print(sum_score)
 
 # 10773
-k = int(input())
+# k = int(input())
+#
+# stack = []
+#
+# for i in range(k):
+#     a = int(input())
+#     if a == 0:
+#         stack.pop()
+#     else:
+#         stack.append(a)
+# print(sum(stack))
 
-stack = []
-
-for i in range(k):
-    a = int(input())
-    if a == 0:
-        stack.pop()
-    else:
-        stack.append(a)
-print(sum(stack))
+# 11399
+# n = int(input())
+# data = list(map(int, input().split()))
+# data.sort()
+#
+# cnt = 0
+# s = 0
+# for i in range(n):
+#     cnt += data[i]
+#     s += cnt
+# print(s)
