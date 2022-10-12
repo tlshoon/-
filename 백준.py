@@ -275,7 +275,7 @@
 #     graph[a] += [b]  # a에 b연결
 #     graph[b] += [a]  # b에 a연결  -> 양방향  // 이중리스트
 #
-# visited[1] = 1  # 1번부터 컴퓨터 시작이니 방문 표
+# visited[1] = 1  # 1번부터 컴퓨터 시작이니 방문 표시
 # q=deque([1])
 #
 # while q:
@@ -285,4 +285,74 @@
 #             visited[nx] = 1
 #
 # print(sum(visited)-1)
+
+# 1260번
+# from collections import deque
+# n, m, v = map(int, input().split())
 #
+# graph = [[] for _ in range(n+1)]
+#
+#
+# for i in range(m):
+#     a,b = map(int,input().split())
+#     graph[a] += [b]
+#     graph[b] += [a]
+#
+# for i in range(m):
+#     graph[i].sort()
+#
+#
+# visited_bfs = [False] * (n+1)
+# visited_dfs = [False] * (n+1)
+#
+# def dfs(graph, start, visited_dfs):
+#     visited_dfs[start] = True
+#     print(start,end=' ')
+#     for i in graph[start]:
+#         if visited_dfs[i] == False:
+#             dfs(graph,i,visited_dfs)
+#
+# def bfs(graph, start, visited_bfs):
+#     queue=deque([start])
+#     visited_bfs[start] = True
+#     while queue:
+#         bfs_now = queue.popleft()
+#         print(bfs_now,end=' ')
+#         for i in graph[bfs_now]:
+#             if visited_bfs[i] == False:
+#                 queue.append(i)
+#                 visited_bfs[i] = True
+#
+# dfs(graph,v,visited_dfs)
+# print(sep='')
+# bfs(graph, v, visited_bfs)
+
+# 14716번
+# n,m = map(int,input().split())
+# data = []
+# for i in range(n):
+#     data.append(list(map(int,input().split())))
+#
+#
+# def dfs(x,y):
+#     if x<= -1 or x >=n or y <= -1 or y >=m:
+#         return False
+#     if data[x][y] == 1:
+#         data[x][y] = 0
+#         dfs(x-1,y)
+#         dfs(x, y-1)
+#         dfs(x+1,y)
+#         dfs(x,y+1)
+#         dfs(x+1, y+1)
+#         dfs(x-1, y+1)
+#         dfs(x+1, y-1)
+#         dfs(x-1, y-1)
+#         return True
+#     return False
+#
+# result = 0
+# for i in range(n):
+#     for j in range(m):
+#         if dfs(i,j) == True:
+#             result += 1
+# print(result)
