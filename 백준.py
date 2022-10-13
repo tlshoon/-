@@ -378,3 +378,48 @@
 #         if K <= 0: # 만약 K가 0이면 반복문을 탈출합니다.
 #        		break
 # print(answer) # 거슬러 준 동전 + 화폐의 수
+
+# 1026번
+# n = int(input())
+# a = list(map(int,input().split()))
+# b = list(map(int,input().split()))
+#
+# a.sort()
+# b.sort(reverse=True)
+# s = 0
+# for i in range(n):
+#     s += a[i] * b[i]
+# print(s)
+
+# 4963번
+# def bfs(x,y):
+#     if 0<= x and x < h and 0 <= y and y < w:
+#         if graph[x][y] == 1:
+#             graph[x][y] = 2
+#             bfs(x-1,y-1)
+#             bfs(x-1,y)
+#             bfs(x-1,y+1)
+#             bfs(x,y+1)
+#             bfs(x,y-1)
+#             bfs(x+1,y-1)
+#             bfs(x+1,y)
+#             bfs(x+1,y+1)
+#             return True
+#         return False
+#
+# dx = [-1,-1,-1,0,0,1,1,1]
+# dy = [-1,0,1,-1,1,-1,0,1]
+#
+# while True:
+#     w, h = map(int, input().split())
+#     if not w and not h:
+#         break
+#     graph = [list(map(int,input().split())) for _ in range(h)]
+#     cnt = 0
+#
+#     for i in range(w):
+#         for j in range(h):
+#             if bfs(i,j) == True:
+#                 cnt += 1
+#     print(cnt)
+
