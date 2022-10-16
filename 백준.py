@@ -423,3 +423,34 @@
 #                 cnt += 1
 #     print(cnt)
 
+# 1427번
+# n = list(map(int,input()))
+# n.sort(reverse=True)
+# for i in n:
+#     print(i,end='')
+
+# 11656번
+# s = input()
+#
+# dict = []
+# for i in range(len(s)):
+#     dict.append(s[i:])
+#
+# dict.sort()
+#
+# for i in dict:
+#     print(i,sep='')
+
+# 9237번
+# n = int(input())
+# t = list(map(int,input().split()))
+# t.sort(reverse=True)
+#
+# for i in range(n):
+#     t[i] = t[i] - (n-1-i)
+#
+# max_value = max(t)
+# cnt = n + 1 + max_value
+#
+# print(cnt)
+
