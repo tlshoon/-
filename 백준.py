@@ -454,3 +454,23 @@
 #
 # print(cnt)
 
+# 5585번
+
+# n = int(input())
+#
+# coins = [500,100,50,10,5,1]
+#
+# change = 1000 - n
+# cnt = 0
+#
+# for coin in coins:
+#     cnt += change // coin
+#     change %= coin
+#
+# print(cnt)
+
+# 2752번
+# n = list(map(int,input().split()))
+# n.sort()
+# for i in n:
+#     print(i,end=" ")
