@@ -474,3 +474,14 @@
 # n.sort()
 # for i in n:
 #     print(i,end=" ")
+
+# 10867번
+# n = int(input())
+#
+# data = set(map(int,input().split()))
+#
+# a = sorted(data)
+#
+# print(a)
+# for i in a:
+#     print(i,end=" ")
