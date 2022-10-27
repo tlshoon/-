@@ -566,7 +566,6 @@
 #     print(binary_search(a,b[i]))
 
 # 7795번
-
 # def binary_search(B,a):
 #     start = 0
 #     end = len(B) - 1
@@ -589,5 +588,58 @@
 #         cnt += (binary_search(B,a) + 1)
 #     print(cnt)
 
+# 2805번
+# n, m = map(int,input().split())
+# array = sorted(list(map(int,input().split())))
+#
+# start = 0
+# end = max(array)
+#
+# result = 0
+#
+# while start <= end:
+#     total = 0
+#     mid = (start+end) // 2
+#     for x in array:
+#         if x > mid:
+#             total += x - mid
+#
+#     if total < m:
+#         end = mid - 1
+#     else:
+#         result = mid
+#         start = mid + 1
+#
+# print(result)
 
+# 2271번
+# n = int(input())
+# rope = []
+# for _ in range(n):
+#     rope.append(int(input()))
+# rope.sort(reverse=True)
+#
+# value = []
+#
+# for num in range(n):
+#     value.append(rope[num]*(num+1))
+# print(max(value))
 
+# 14916번
+# n = int(input())
+# cnt = 0
+# i = 0
+# while True:
+#     if n%5 == 0:
+#         cnt += n //5
+#         break
+#     else:
+#         n -= 2
+#         cnt += 1
+#
+#     if n < 0 :
+#         break
+# if n < 0:
+#     print(-1)
+# else:
+#     print(cnt)
