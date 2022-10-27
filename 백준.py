@@ -538,3 +538,56 @@
 #         maxi = i
 # print(maxi)
 
+# 1920번
+# import sys
+#
+# n = int(input())
+# a = list(map(int,sys.stdin.readline().split()))
+# a.sort()
+# m = int(input())
+# b =  list(map(int,sys.stdin.readline().split()))
+#
+# def binary_search(a,b):
+#     start = 0
+#     end = len(a) - 1
+#
+#     while start <= end:
+#         mid = (start+end) // 2
+#         if b == a[mid]:
+#             return 1
+#         elif b > a[mid]:
+#             start = mid + 1
+#         else:
+#             end = mid - 1
+#
+#     return 0
+#
+# for i in range(m):
+#     print(binary_search(a,b[i]))
+
+# 7795번
+
+# def binary_search(B,a):
+#     start = 0
+#     end = len(B) - 1
+#     res = -1
+#     while start <= end:
+#         mid = (start + end) // 2
+#         if B[mid] < a:
+#             res = mid
+#             start = mid + 1
+#         else:
+#             end = mid - 1
+#     return res
+#
+# for _ in range(int(input())):
+#     n,m = map(int,input().split())
+#     A = sorted(list(map(int,input().split())))
+#     B = sorted(list(map(int,input().split())))
+#     cnt = 0
+#     for a in A:
+#         cnt += (binary_search(B,a) + 1)
+#     print(cnt)
+
+
+
