@@ -688,3 +688,94 @@
 #         print("INF")
 #     else:
 #         print(distance[i])
+
+# 1916번
+# import sys
+# input = sys.stdin.readline
+# INF = int(1e9)
+#
+# n = int(input())
+# m = int(input())
+#
+# graph = [[] for _ in range(n+1)]
+# visited = [False] * (n+1)
+# distance = [INF] * (n+1)
+#
+# for _ in range(m):
+#     a,b,c = map(int,input().split())
+#     graph[a].append((b,c))
+#
+# start, destination = map(int,input().split())
+#
+#
+# def get_smallest_node():
+#     min_value = INF
+#     index = 0
+#     for i in range(1,n+1):
+#         if distance[i] < min_value and not visited[i]:
+#             min_value = distance[i]
+#             index = i
+#     return index
+#
+#
+# def dijkstra(start):
+#     visited[start] = True
+#     distance[start] = 0
+#     for j in graph[start]:
+#         distance[j[0]] = j[1]
+#     for i in range(n-1):
+#         now = get_smallest_node()
+#         visited[now] = True
+#         for j in graph[now]:
+#             cost = distance[now] + j[1]
+#             if cost < distance[j[0]]:
+#                 distance[j[0]] = cost
+# dijkstra(start)
+#
+# print(distance[destination])
+
+# 1238번
+# import heapq
+# import sys
+#
+# input = sys.stdin.readline
+# INF = int(1e9)
+#
+# v, e, x = map(int, input().split())
+# graph = [[] for _ in range(v + 1)]
+#
+# for _ in range(e):
+#     a, b, cost = map(int, input().split())
+#     graph[a].append((b, cost))
+#
+#
+# def dijkstra(start):
+#     q = []
+#     distance = [INF] * (v + 1)
+#
+#     heapq.heappush(q, (0, start))
+#     distance[start] = 0
+#
+#     while q:
+#         dist, now = heapq.heappop(q)
+#
+#         if distance[now] < dist:
+#             continue
+#
+#         for node_index, node_cost in graph[now]:
+#             cost = dist + node_cost
+#
+#             if distance[node_index] > cost:
+#                 distance[node_index] = cost
+#                 heapq.heappush(q, (cost, node_index))
+#
+#     return distance
+#
+#
+# result = 0
+# for i in range(1, v + 1):
+#     go = dijkstra(i)
+#     back = dijkstra(x)
+#     result = max(result, go[x] + back[i])
+#
+# print(result)
