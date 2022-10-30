@@ -779,3 +779,15 @@
 #     result = max(result, go[x] + back[i])
 #
 # print(result)
+
+# 2725번
+# t = int(input())
+#
+# for _ in range(t):
+#     floor = int(input()) # 층
+#     num = int(input()) # 호
+#     f0 = [x for x in range(1,num+1)]  # 0층 리스트
+#     for k in range(floor):
+#         for i in range(1,num):
+#             f0[i] += f0[i-1]
+#     print(f0[-1])
