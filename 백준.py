@@ -792,3 +792,82 @@
 #             f0[i] += f0[i-1]
 #     print(f0[-1])
 
+# 2178번
+# from collections import deque
+#
+# n,m = map(int,input().split())
+#
+# graph = []
+# for i in range(n):
+#     graph.append(list(map(int,input())))
+#
+# dx = [-1,1,0,0]   # 이동할 네 방향 정의(상,하,좌,우)
+# dy = [0,0,-1,1]
+#
+#
+# def bfs(x,y):
+#     queue = deque()  # 큐 구현을 위해 deque 라이브러리 사용
+#     queue.append((x,y))
+#     while queue:  # 큐가 빌 때까지 반복
+#         x,y = queue.popleft()
+#         for i in range(4):  # 현재 위치에서 네 방향으로의 위치 확인
+#             nx = x + dx[i]
+#             ny = y + dy[i]
+#
+#             if nx < 0 or nx >= n or ny < 0 or ny >= m:
+#                 continue
+#             if graph[nx][ny] == 0:  # 벽인 경우 무시
+#                 continue
+#             if graph[nx][ny] == 1:  # 해당 노드를 처음 방문하는 경우에만 최단 거리 기록
+#                 graph[nx][ny] = graph[x][y] + 1
+#                 queue.append((nx,ny))
+#     return graph[n-1][m-1]
+#
+# print(bfs(0,0))
+
+# 2748번
+# d = [0] * 100
+#
+# d[1] = 1
+# d[2] = 1
+# n = int(input())
+#
+# for i in range(3,n+1):
+#     d[i] = d[i-1] + d[i-2]
+# print(d[n])
+
+# 9095번
+# T = int(input())
+#
+# def sol(n):
+#     if n == 1:
+#         return 1
+#     elif n == 2:
+#         return 2
+#     elif n == 3:
+#         return 4
+#     else:
+#         return sol(n-1) + sol(n-2) + sol(n-3)
+#
+# for i in range(T):
+#     n = int(input())
+#     print((sol(n)))
+
+# 1932번
+# n = int(input())
+#
+# t = []
+# for i in range(n):
+#     t.append(list(map(int,input().split())))
+#
+# k = 2
+# for i in range(1,n):
+#     for j in range(k):
+#         if j == 0:
+#             t[i][j] = t[i][j] + t[i-1][j]
+#         elif i == j:
+#             t[i][j] = t[i][j] + t[i-1][j-1]
+#         else:
+#             t[i][j] = max(t[i-1][j-1],t[i-1][j])+t[i][j]
+#     k += 1
+# print(max(t[n-1]))
