@@ -871,3 +871,23 @@
 #             t[i][j] = max(t[i-1][j-1],t[i-1][j])+t[i][j]
 #     k += 1
 # print(max(t[n-1]))
+
+# 14720번
+# n = int(input())
+# milk = list(map(int,input().split()))
+# cnt = 0
+#
+# for i in range(n):
+#     if milk[i] == cnt % 3:
+#         cnt += 1
+# print(cnt)
+
+# 16435번
+# n, l = map(int,input().split())
+# h = list(map(int,input().split()))
+# h.sort()
+#
+# for i in range(n):
+#     if l >= h[i]:
+#         l += 1
+# print(l)
