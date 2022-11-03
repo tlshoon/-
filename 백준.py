@@ -923,3 +923,34 @@
 #         print(-1)
 #         break
 
+# 11508번
+# n = int(input())
+# data = []
+# for i in range(n):
+#     data.append(int(input()))
+# data.sort(reverse=True)
+#
+# result = 0
+# for i in range(2,len(data),3):
+#     result += data[i]
+#
+# print(sum(data)-result)
+
+# 1449번
+# n, l = map(int,input().split())
+# data = list(map(int,input().split()))
+# data.sort()
+#
+# cnt = 1
+#
+# stat = data[0]
+# end = data[0] + l
+# cnt = 1
+# for i in range(n):
+#     if stat <= data[i] < end:
+#         continue
+#     else:
+#         stat = data[i]
+#         end = data[i] + l
+#         cnt += 1
+# print(cnt)
