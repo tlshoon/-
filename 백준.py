@@ -891,3 +891,35 @@
 #     if l >= h[i]:
 #         l += 1
 # print(l)
+
+# 7568번
+# n = int(input())
+#
+# data = []
+# for _ in range(n):
+#     data.append(list(map(int,input().split())))
+#
+# cnt = 0
+#
+# for i in data:
+#     rank = 1
+#     for j in data:
+#         if i[0] < j[0] and i[1] < j[1]:
+#             rank += 1
+#     print(rank,end=' ')
+
+# 10162번
+# n = int(input())
+#
+# time = [300,60,10]
+# cnt = 0
+#
+# for i in time:
+#     if n % 10 == 0:
+#         cnt = n // i
+#         n %= i
+#         print(cnt, end=" ")
+#     else:
+#         print(-1)
+#         break
+
