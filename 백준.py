@@ -956,48 +956,48 @@
 # print(cnt)
 
 # 10026번
-from collections import deque
-
-dx = [1, -1, 0, 0]
-dy = [0, 0, 1, -1]
-
-def bfs(x, y):
-    q.append([x, y])
-    c[x][y] = cnt
-    while q:
-        x, y = q.popleft()
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-            if 0 <= nx < n and 0 <= ny < n:
-                if a[nx][ny] == a[x][y] and c[nx][ny] == 0:
-                    q.append([nx, ny])
-                    c[nx][ny] = 1
-
-n = int(input())
-a = [list(map(str, input())) for _ in range(n)]
-c = [[0]*n for _ in range(n)]
-q = deque()
-
-cnt = 0
-for i in range(n):
-    for j in range(n):
-        if c[i][j] == 0:
-            bfs(i, j)
-            cnt += 1
-print(cnt, end=' ')
-
-for i in range(n):
-    for j in range(n):
-        if a[i][j] == 'R':
-            a[i][j] = 'G'
-
-c = [[0]*n for _ in range(n)]
-
-cnt = 0
-for i in range(n):
-    for j in range(n):
-        if c[i][j] == 0:
-            bfs(i, j)
-            cnt += 1
-print(cnt)
+# from collections import deque
+#
+# n = int(input())
+# graph = [list(map(str,input())) for _ in range(n)]
+# visited = [[0] * n for _ in range(n)]
+# queue = deque()
+#
+# dx = [-1,1,0,0]
+# dy = [0,0,-1,1]
+#
+# def bfs(x,y):
+#     queue.append([x, y])
+#     visited[x][y] = 1
+#     while queue:
+#         x,y = queue.popleft()
+#         for i in range(4):
+#             nx = x + dx[i]
+#             ny = y + dy[i]
+#             if 0 <= nx < n and 0 <= ny < n:
+#                 if graph[nx][ny] == graph[x][y] and visited[nx][ny] == 0:
+#                     queue.append([nx,ny])
+#                     visited[nx][ny] = 1
+#
+# cnt = 0
+# for i in range(n):
+#     for j in range(n):
+#         if visited[i][j] == 0:
+#             bfs(i,j)
+#             cnt += 1
+# print(cnt,end=' ')
+#
+#
+# for i in range(n):
+#     for j in range(n):
+#         if graph[i][j] == 'R':
+#             graph[i][j] = 'G'
+#
+# cnt = 0
+# visited = [[0] * n for _ in range(n)]
+# for i in range(n):
+#     for j in range(n):
+#         if visited[i][j] == 0:
+#             bfs(i,j)
+#             cnt += 1
+# print(cnt)
