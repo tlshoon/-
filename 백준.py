@@ -1041,3 +1041,35 @@
 # print(len(cnt))
 # for i in range(len(cnt)):
 #     print(cnt[i])
+
+# 7562번
+# from collections import deque
+# queue = deque()
+#
+# dx = [2,1,2,1,-2,-2,-1,-1]
+# dy = [1,2,-1,-2,1,-1,2,-2]
+#
+# def bfs(x,y):
+#     visited[x][y] = 1
+#     queue.append([x,y])
+#     while queue:
+#         x,y = queue.popleft()
+#         for i in range(8):
+#             nx = x + dx[i]
+#             ny = y + dy[i]
+#             if nx < 0 or nx >= m or ny < 0 or ny >= m:
+#                 continue
+#             if visited[nx][ny] == 0:
+#                 visited[nx][ny] = 1
+#                 graph[nx][ny] = graph[x][y] + 1
+#                 queue.append([nx,ny])
+#     return graph[c][d]
+#
+# n = int(input())
+# for i in range(n):
+#     m = int(input())
+#     graph = [[0] * m for _ in range(m)]
+#     visited = [[0] * m for _ in range(m)]
+#     a,b = map(int,input().split())
+#     c,d = map(int,input().split())
+#     print(bfs(a,b))
