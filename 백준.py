@@ -1119,4 +1119,39 @@
 #             max_food = max(max_food, bfs(i,j))
 # print(max_food)
 
-
+# 10815번
+# n = int(input())
+# array = sorted(list(map(int,input().split())))
+# m = int(input())
+# target_data = list(map(int,input().split()))
+#
+# def binary_search(array,target,start,end):
+#     while start <= end:
+#         mid = (start+end) // 2
+#         if target == array[mid]:
+#             return True
+#         elif target > array[mid]:
+#             start = mid + 1
+#         else:
+#             end = mid - 1
+#     return False
+#
+# for i in target_data:
+#     if binary_search(array,i,0,n-1) == True:
+#         print(1,end=' ')
+#     else:
+#         print(0,end=' ')
+#
+# 2847번
+# n = int(input())
+#
+# score = []
+# for i in range(n):
+#     score.append(int(input()))
+#
+# cnt = 0
+# for i in range(n-2,-1,-1):
+#     if score[i] >= score[i+1]:
+#         cnt += score[i] - score[i+1] + 1
+#         score[i] = score[i+1]-1
+# print(cnt)
