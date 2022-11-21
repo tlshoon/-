@@ -1167,3 +1167,18 @@
 #             dp[i] = dp[j]
 #     dp[i] += 1
 # print(max(dp))
+
+# 2839번
+# sugar = int(input())
+#
+# bag = 0
+#
+# while sugar >= 0:
+#     if sugar % 5 == 0:
+#         bag += (sugar // 5)
+#         print(bag)
+#         break
+#     sugar -= 3
+#     bag += 1
+# else:
+#     print(-1)
