@@ -1218,3 +1218,37 @@
 #     d[i] = (d[i-1] + d[i-2]) % 10007
 #
 # print(d[n])
+
+# 11497번
+# t = int(input())
+#
+# for i in range(t):
+#     n = int(input())
+#     l = list(map(int, input().split()))
+#     l.sort()
+#
+#     data_1 = []
+#     data_2 = []
+#
+#     for i in range(len(l)):
+#         if i % 2 == 0:
+#             data_1.append(l[i])
+#         else:
+#             data_2.append(l[i])
+#
+#     data_2.sort(reverse=True)
+#
+#     for i in data_2:
+#         data_1.append(i)
+#
+#     cnt = 0
+#     for i in range(len(data_1)):
+#         if i == len(data_1) - 1:
+#             last_value = abs(data_1[len(data_1) - 1] - data_1[0])
+#             break
+#         abs_value = abs(data_1[i + 1] - data_1[i])  #
+#         max_value = max(cnt, abs_value)
+#         cnt = max_value
+#
+#     last_maxvalue = max(last_value, max_value)
+#     print(last_maxvalue)
